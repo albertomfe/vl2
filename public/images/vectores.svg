@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000px" height="600px" viewBox="0 0 1000 500" zoomAndPan="disable" preserveAspectRatio="none">
+
+    <style type="text/css">
+  	  <![CDATA[
+  		line
+  		{
+  			stroke: rgba(0,0,0,0.1);
+  			stroke-width: 1px;
+  		}
+      ]]>
+    </style>
+
+    <rect x="850" y="400" width="120" height="50" style="fill:#eee"/>
+
+
+    <line x1="3" y1="3" x2="1900" y2="1900"></line>
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#eee" stroke-width="1" />
+    <line x1="-200" y1="0" x2="200" y2="0" stroke="#eee" stroke-width="1" />
+    <line x1="0" y1="-100" x2="0" y2="100" stroke="#eee" stroke-width="1" />
+
+
+    <line x1="800" y1="3" x2="3" y2="800" stroke="#eee" stroke-width="1" />
+    <circle cx="600" cy="400" r="20" fill="#eee" />
+
+    <polyline points="300,150 250,45 150,20"	stroke="#eee" stroke-width="4" fill="#eee" />
+
+    <circle cx="200" cy="400" r="75" fill="#eee" />
+    <circle cx="125" cy="75" r="20" fill="#eee" />
+    <circle cx="400" cy="200" r="40" fill="#eee" />
+    <circle cx="70" cy="220" r="20" fill="#eee" />
+    <circle cx="850" cy="200" r="35" fill="#eee" />
+
+    <polyline points="600,700 800,600 700,300"	stroke="#eee"  fill="#eee" />
+
+
+    <rect x="600" y="10" width="150" height="75" style="fill:#eee"/>
+
+
+
+
+
+    <polyline points="400 410,500 500,700 300,300 200,180"  style="fill:none;stroke:#eee;stroke-width:2"/>
+
+    <circle cx="980" cy="150" r="75" fill="#eee" />
+
+    <line x1="500" y1="150" x2="1800" y2="800" stroke="red" stroke-width="1" />
+
+</svg>

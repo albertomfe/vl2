@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+        <!--Cabeceras  -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  			<title>Atencion en Linea</title>
+  			<meta name="viewport" content="width=device-width, initial-scale=1">
+  			<meta name="description" content="Imacop,Atencion en Linea,Video LLamada" />
+  			<meta name="keywords" content="Imacop,Atencion en Linea ,Soporte Tecnico ,Viajes,Puerto Vallarta Cancun" />
+  			<meta name="author" content="Manuel Alberto Flores Esparza" />
+        <link rel="shortcut  icon" href="/img/favicon.ico" type="image/x-icon"/>
+
+        <!--Estilos -->
+        <link rel="stylesheet" href="/css/animate.css">
+  			<link rel="stylesheet" href="/css/semantic.min.css">
+  			<link rel="stylesheet" href="/css/style.css">
+
+        <!--Shorcut Mobile-->
+        <meta name="theme-color" content="#b10101">
+  			<meta name="MobileOptimized" content="width">
+  			<meta name="HandheldFriendly" content="true">
+  			<meta name="apple-mobile-web-app-capable" content="yes">
+  			<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="shortcut icon" type="/image/png" href="img/android-icon-192x192.png">
+        <!--Fin Cabeceras  -->
+
+        <style>
+          html { margin-top: 20px; }
+          #chat-content { height: 180px;  overflow-y: scroll; }
+          .fondo-gris
+          {
+            background: #F2F2F2!important;
+          }
+        </style>
+  </head>
+  <body>
+
+    <!--
+    <div class="ui top attached button">Atencion en Linea</div>
+    <div class="ui grid">
+      <div class="twelve wide column">
+          <p>
+          Herramienta para video llamadas
+        </p>
+      </div>
+    </div>
+    -->
+
+
+    <div class="ui container">
+
+
+      <!-- Chat Template -->
+      <script id="chat-template" type="text/x-handlebars-template">
+        <h3 class="ui orange header">Room ID -> <strong>{{ room }}</strong></h3>
+        <hr>
+        <div id="chat-content" class="ui feed"> </div>
+        <hr>
+        <div class="ui form">
+          <div class="ui field">
+            <label>Escribe Tu Mensaje</label>
+            <textarea id="post-message" name="post-message" rows="1"></textarea>
+          </div>
+          <div id="post-btn" class="ui secondary submit button">Enviar</div>
+        </div>
+      </script>
+
+      <!-- Chat Content Template -->
+      <script id="chat-content-template" type="text/x-handlebars-template">
+        {{#each messages}}
+          <div class="event">
+            <div class="label">
+              <i class="icon blue user"></i>
+            </div>
+            <div class="content">
+              <div class="summary">
+                <a href="#"> {{ username }}</a> posted on
+                <div class="date">
+                  {{ postedOn }}
+                </div>
+              </div>
+              <div class="extra text">
+                {{ message }}
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </script>
+
+      <!-- Remote Video Template -->
+      <script id="remote-video-template" type="text/x-handlebars-template">
+        <div id="{{ id }}" class="four wide column"></div>
+      </script>
+
+
+      <h1 class="ui header">Atención en Linea</h1>
+      <hr>
+
+      <div class="ui two column stackable grid">
+        <!-- Chat Section -->
+        <div class="ui ten wide column ">
+          <div class="ui segment fondo-gris ">
+            <!-- Chat Room Form -->
+            <div class="ui  form ">
+              <div class="fields">
+                <div class="field">
+                  <label>Nombre de Usuario</label>
+                  <input type="text" placeholder="Nombre de Usuario" id="username" name="username">
+                </div>
+                <div class="field">
+                  <label>Sala</label>
+                  <input type="text" placeholder="Nombre de Sala" id="roomName" name="roomName">
+                </div>
+              </div>
+              <br>
+              <div class="ui buttons">
+                <div id="create-btn" class="ui submit orange icon button">Crear Sala <i class='plug icon' ></i></div>
+                <div class="or"></div>
+                <div id="join-btn" class="ui submit green icon button">Entrar a Sala <i class="right arrow icon"></i></div>
+              </div>
+            </div>
+            <!-- Chat Room Messages -->
+            <div id="chat"></div>
+          </div>
+        </div>
+        <!-- End of Chat Section -->
+
+        <!-- Local Camera -->
+        <div class="ui six wide column">
+          <div class="ui small label">Camara Local </div>
+          <div class="ui fluid image">
+            <a class="ui placeholder red right corner label">
+              <i class="camera icon"></i>
+            </a>
+            <img id="local-image" src="images/image.png">
+          </div>
+          <!--<img id="local-image" class="ui large image" src="images/image.png">-->
+          <video id="local-video" class="ui large image rounded hidden" autoplay></video>
+        </div>
+      </div>
+
+      <!-- Remote Cameras -->
+      <h3 class="ui center aligned header">Camaras Remotas</h3>
+      <div id="remote-videos" class="ui stackable grid">
+        <div class="four wide column">
+          <img class="ui centered medium image rounded" src="images/image.png">
+        </div>
+        <div class="four wide column">
+          <img class="ui centered medium image rounded" src="images/image.png">
+        </div>
+        <div class="four wide column">
+          <img class="ui centered medium image rounded" src="images/image.png">
+        </div>
+        <div class="four wide column">
+          <img class="ui centered medium image rounded" src="images/image.png">
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+     <!--Scripts -->
+     <script src="/js/jquery.min.js" charset="utf-8"></script>
+     <script src="/js/semantic.min.js" charset="utf-8"></script>
+     <!-- Scripts vl -->
+     <script src="scripts/jquery/dist/jquery.min.js"></script>
+     <script src="scripts/semantic-ui-css/semantic.min.js"></script>
+     <script src="scripts/handlebars/dist/handlebars.min.js "></script>
+     <script src="scripts/simplewebrtc/out/simplewebrtc-with-adapter.bundle.js"></script>
+     <script src="/js/app.js"></script>
+     <script>
+       function generar_room()
+       {
+         return Math.random().toString(36).substr(2); // Eliminar `0.`
+       };
+
+       $( document ).ready(function()
+       {
+           $("#roomName").val(generar_room());
+           //console.log( "ready!" );
+       });
+
+     </script>
+  </body>
+</html>

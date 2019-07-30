@@ -1,0 +1,23 @@
+{
+  "name": "vl2",
+  "version": "1.0.0",
+  "description": "Video LLamada",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error:no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Manuel Alberto Flores Esparza",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "handlebars": "*",
+    "jquery": "*",
+    "semantic-ui-css": "*",
+    "simplewebrtc": "*"
+  },
+  "engines": {
+    "node": "12.2.0",
+    "npm": "6.9.0"
+  }
+}
